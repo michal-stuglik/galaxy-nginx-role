@@ -1,0 +1,24 @@
+---
+
+mode: production
+#mode: lite
+
+galaxy_project_root: /home/galaxy/galaxy-dist
+galaxy_database_root: /home/galaxy/galaxy-database
+galaxy_database_upload_store_root: /home/galaxy/galaxy-database/database/tmp/upload_store
+
+nginx_packages:
+  - nginx-common
+  - nginx-full
+
+nginx_common:
+  - nginx-common
+
+nginx: nginx-1.10.2
+upload_modul_dir: nginx-upload-module-2.2
+upload_module_zip: 2.2.zip
+tmp_dir: /tmp
+
+# example lite mode settings
+galaxy_host_ip: localhost
+galaxy_host_port: 8080
