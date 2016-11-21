@@ -5,7 +5,7 @@ mode: production
 
 galaxy_project_root: /home/galaxy/galaxy-dist
 galaxy_database_root: /home/galaxy/galaxy-database
-galaxy_database_upload_store_root: /home/galaxy/galaxy-database/database/tmp/upload_store
+galaxy_database_upload_store_root: /home/galaxy/galaxy-dist/database/tmp/upload_store
 
 nginx_packages:
   - nginx-common
