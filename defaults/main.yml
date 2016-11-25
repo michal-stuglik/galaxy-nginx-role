@@ -1,7 +1,6 @@
 ---
 
-mode: production
-#mode: lite
+production: true
 
 galaxy_project_root: /home/galaxy/galaxy-dist
 galaxy_database_root: /home/galaxy/galaxy-database

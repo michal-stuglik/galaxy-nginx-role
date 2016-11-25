@@ -3,7 +3,7 @@
   - name: Install NGINX common packages
     apt: pkg={{ item }} state=installed update-cache=yes
     with_items: "{{ nginx_common }}"
-    when: mode == "production"
+    when: production
     become: true
 
   - name: Install NGINX from scratch
@@ -20,25 +20,25 @@
       --with-http_stub_status_module \
       --with-cc-opt='-Wno-error' &&
       make && make install
-    when: mode == "production"
+    when: production
     become: true
 
   - name: Install NGINX production configuration file.
     template: src=nginx.conf.prod.j2 dest=/etc/nginx/nginx.conf
-    when: mode == "production"
+    when: production
     notify: restart nginx
     become: true
 
   - name: Install NGINX required system packages
     apt: pkg={{ item }} state=installed update-cache=yes
     with_items: "{{ nginx_packages }}"
-    when: mode == "lite"
+    when: not production
     become: true
 
   - name: Install NGINX configuration file.
     template: src=nginx.conf.j2 dest=/etc/nginx/nginx.conf
     notify: restart nginx
-    when: mode == "lite"
+    when: not production
     become: true
 
 
