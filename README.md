@@ -1,6 +1,6 @@
 
 This Ansible role is for automated installation of NGINX proxy server 
-on top of Galaxy framework. Production `mode` install server from sources
+on top of Galaxy framework. Variable `production` set as `true` install server from sources
 together with upload module and config sets uwsgi as web server.
 
 ### Usage ###
