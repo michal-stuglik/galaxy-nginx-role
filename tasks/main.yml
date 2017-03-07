@@ -9,7 +9,7 @@
   - name: Install NGINX from scratch
     raw: |
       curl --output {{tmp_dir}}/{{nginx}}.tar.gz --url http://nginx.org/download/{{nginx}}.tar.gz &&
-      curl --output {{tmp_dir}}/{{upload_module_zip}} --url https://github.com/vkholodkov/nginx-upload-module/archive/{{upload_module_zip}} &&
+      wget https://github.com/vkholodkov/nginx-upload-module/archive/{{upload_module_zip}} -O {{tmp_dir}}/{{upload_module_zip}} &&
       tar -zxvf {{tmp_dir}}/{{nginx}}.tar.gz -C {{tmp_dir}} &&
       unzip -o {{tmp_dir}}/{{upload_module_zip}} -d {{tmp_dir}} &&
       cd {{tmp_dir}}/{{nginx}} &&
